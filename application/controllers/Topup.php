@@ -155,6 +155,8 @@ class Topup extends CI_Controller
     
     public function update_action() 
     {
+        date_default_timezone_set('Asia/Jakarta');
+        $now = date('y-m-d H:i:s');
         $this->_rules();
 
         if ($this->form_validation->run() == FALSE) {
@@ -167,8 +169,8 @@ class Topup extends CI_Controller
 		'id_client' => $this->input->post('id_client',TRUE),
 		'client' => $this->input->post('client',TRUE),
 		'jml_topup' => $this->input->post('jml_topup',TRUE),
-		'created_date' => $this->input->post('created_date',TRUE),
-		'created_by' => $this->input->post('created_by',TRUE),
+        'update_date' => $now,
+        'update_by' => $this->session->userdata('full_name',TRUE)
 	    );
 
             $this->Topup_model->update($this->input->post('id', TRUE), $data);
