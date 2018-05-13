@@ -87,7 +87,7 @@ function checked_akses($id_user_level,$id_menu){
 function autocomplate_json($table,$field){
     $ci = get_instance();
     $ci->db->like($field, $_GET['term']);
-    $ci->db->select($field);
+    // $ci->db->select($field);
     $collections = $ci->db->get($table)->result();
     foreach ($collections as $collection) {
         $return_arr[] = $collection->$field;
