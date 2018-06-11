@@ -14,6 +14,10 @@
         <!-- Ionicons -->
         <link rel="stylesheet" href="<?php echo base_url() ?>assets/adminlte/bower_components/select2/dist/css/select2.min.css">
         <link rel="stylesheet" href="<?php echo base_url() ?>assets/adminlte/bower_components/Ionicons/css/ionicons.min.css">
+          <!-- daterange picker -->
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/adminltebootstrap-daterangepicker/daterangepicker.css">
+        <!-- bootstrap datepicker -->
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/adminltebootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
         <!-- DataTables -->
         <link rel="stylesheet" href="<?php echo base_url() ?>assets/adminlte/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
         <!-- Theme style -->
@@ -21,6 +25,9 @@
         <!-- AdminLTE Skins. Choose a skin from the css/skins
              folder instead of downloading all of them to reduce the load. -->
         <link rel="stylesheet" href="<?php echo base_url() ?>assets/adminlte/dist/css/skins/_all-skins.min.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/adminlte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+
+        
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -330,10 +337,38 @@
         <script src="<?php echo base_url() ?>assets/adminlte/dist/js/demo.js"></script>
         <!-- Select2 -->
         <script src="<?php echo base_url() ?>assets/adminlte/bower_components/select2/dist/js/select2.full.min.js"></script>
+        <!-- wysihtml5 -->
+        <script src="<?php echo base_url() ?>assets/adminlte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+        <!-- date-range-picker -->
+        <script src="<?php echo base_url() ?>assets/adminlte/plugins/moment/min/moment.min.js"></script>
+        <script src="<?php echo base_url() ?>assets/adminlte/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+        <!-- bootstrap datepicker -->
+        <script src="<?php echo base_url() ?>assets/adminlte/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
         <!-- page script -->
         <script>
             $(function () {
                 $('.select2').select2()
+                    //Date range picker
+                $('#reservation').daterangepicker()
+
+
+    //Date picker
+    $('#due_date').datepicker({
+    format: 'dd-MM-yyyy',
+    locale:'id',
+      autoclose: true
+      
+    })
+
+
+    //Date picker
+    $('#periode').datepicker({
+    format: 'MM yyyy',
+    locale:'id',
+      autoclose: true
+      
+    })
+                $('.textarea').wysihtml5()
                 $('#example1').DataTable()
                 $('#example2').DataTable({
                     'paging'      : true,

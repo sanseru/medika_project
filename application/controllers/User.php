@@ -80,7 +80,6 @@ class User extends CI_Controller
 		'id_user_level' => $this->input->post('id_user_level',TRUE),
 		'is_aktif'      => $this->input->post('is_aktif',TRUE),
 	    );
-
             $this->User_model->insert($data);
             $this->session->set_flashdata('message', 'Create Record Success');
             redirect(site_url('user'));

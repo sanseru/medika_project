@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'http://localhost/medika_project/';
-// $config['base_url'] = 'http://192.168.3.162/medika_project/';
+// $config['base_url'] = 'http://192.168.3.42/medika_project/';
 
 /*
 |--------------------------------------------------------------------------

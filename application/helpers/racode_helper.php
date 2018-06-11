@@ -42,6 +42,9 @@ function datalist_dinamis($name,$table,$field,$value=null){
 function rename_string_is_aktif($string){
         return $string=='y'?'Aktif':'Tidak Aktif';
     }
+    function rename_string_status($string){
+        return $string=='s'?'SELESAI':'DALAM PROGRES';
+    }
     
 
 function is_login(){

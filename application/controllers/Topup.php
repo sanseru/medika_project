@@ -106,17 +106,22 @@ class Topup extends CI_Controller
                 'created_by' => $this->session->userdata('full_name',TRUE),
             );
             $this->Topup_model->insert($data);
+            $lastid = $this->db->insert_id();
+
             // $s_result = $this->Topup_model->insert($data);
             // if($s_result){
                 $c_result = $this->Client_model->get_by_id($this->input->post('id_client', TRUE));
                 if(isset($c_result)){
-                    var_dump($c_result);
-                    var_dump($c_result->saldo);
+                    // var_dump($c_result);
+                    // var_dump($c_result->saldo);
                     $c_data = array(
                         'saldo' => intval($this->input->post('jml_topup',TRUE)) + intval($c_result->saldo)
                     );
-                    var_dump($c_data);
+                    // var_dump($c_data);
                     $this->Client_model->update($this->input->post('id_client', TRUE), $c_data);
+                    $this->Topup_model->update($lastid, $c_data);
+
+
                 }
                 
                 $this->session->set_flashdata('message', 'Create Record Success');

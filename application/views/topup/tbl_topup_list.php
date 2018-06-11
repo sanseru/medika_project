@@ -72,11 +72,11 @@
 			<td><?php echo number_format ($topup->jml_topup) ?></td>
 			<td style="text-align:center" width="200px">
 				<?php 
-				echo anchor(site_url('topup/read/'.$topup->id),'<i class="fa fa-eye" aria-hidden="true"></i>','class="btn btn-danger btn-sm"'); 
+                echo anchor(site_url('topup/read/'.$topup->id),'<i class="fa fa-eye" aria-hidden="true"></i>','class="btn btn-danger btn-sm"'); 
 				echo '  '; 
 				echo anchor(site_url('topup/update/'.$topup->id),'<i class="fa fa-pencil-square-o" aria-hidden="true"></i>','class="btn btn-danger btn-sm"'); 
 				echo '  '; 
-				echo anchor(site_url('topup/delete/'.$topup->id),'<i class="fa fa-trash-o" aria-hidden="true"></i>','class="btn btn-danger btn-sm" Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+				echo anchor(site_url('topup/delete/'.$topup->id),'<i class="fa fa-trash-o" aria-hidden="true"></i>','class="btn btn-danger btn-sm" Delete','onClick="return confirm(\'Are You Sure ?\')"'); 
 				?>
 			</td>
 		</tr>
@@ -98,3 +98,6 @@
             </div>
     </section>
 </div>
+<script src="<?php echo base_url('assets/js/jquery-1.11.2.min.js') ?>"></script>
+        <script src="<?php echo base_url('assets/datatables/jquery.dataTables.js') ?>"></script>
+        <script src="<?php echo base_url('assets/datatables/dataTables.bootstrap.js') ?>"></script>
