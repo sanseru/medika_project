@@ -91,6 +91,12 @@ class Hse_sasaran_mutu_detail_model extends CI_Model
         $this->db->where($this->id, $id);
         $this->db->delete($this->table);
     }
+        function search_divisi($departmen){
+        $this->db->like('nm_divisi', $departmen , 'both');
+        $this->db->order_by('nm_divisi', 'ASC');
+        $this->db->limit(10);
+        return $this->db->get('m_division_hse')->result();
+    }
 
 }
 

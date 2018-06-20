@@ -16,7 +16,7 @@
 	    <tr><td>Goals</td><td><?php echo $goals; ?></td></tr>
 	    <tr><td>Audit</td><td><?php echo $audit; ?></td></tr>
 	    <tr><td>Keterangan</td><td><?php echo $keterangan; ?></td></tr>
-	    <tr><td></td><td><a href="<?php echo site_url('hse_sasaran_mutu_detail') ?>" class="btn btn-default">Cancel</a></td></tr>
+	    <tr><td></td><td><a href="<?php echo site_url('sasaran_mutu/detail/'). $id_samut ?>" class="btn btn-default">Cancel</a></td></tr>
 	</table>
         </div><!-- /.box-body -->
               </div><!-- /.box -->

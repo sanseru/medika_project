@@ -48,6 +48,11 @@ class Hse_sasaran_mutu_detail extends CI_Controller
 
     public function create($id) 
     {
+        $cek=$this->db->query("select due_date from hse_sasaran_mutu where id='$id'");
+         foreach ($cek->result() as $row)
+    {
+        $due_date =  $row->due_date;
+    }
         $data = array(
             'button' => 'Create',
             'action' => site_url('hse_sasaran_mutu_detail/create_action'),
@@ -55,7 +60,7 @@ class Hse_sasaran_mutu_detail extends CI_Controller
 	    'id_samut' => $id,
 	    'departmen' => set_value('departmen'),
 	    'pic' => set_value('pic'),
-	    'due_date' => set_value('due_date'),
+	    'due_date' => $due_date,
 	    'status' => set_value('status'),
 	    'goals' => set_value('goals'),
 	    'audit' => set_value('audit'),
@@ -75,6 +80,8 @@ class Hse_sasaran_mutu_detail extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
             $this->create();
         } else {
+            // $id= $this->input->post('id_samut',TRUE);
+
             $data = array(
 		'id_samut' => $this->input->post('id_samut',TRUE),
 		'departmen' => $this->input->post('departmen',TRUE),
@@ -87,11 +94,10 @@ class Hse_sasaran_mutu_detail extends CI_Controller
         'created_date' => $now,
         'created_by' => $this->session->userdata('full_name',TRUE),
     );
-	
 
             $this->Hse_sasaran_mutu_detail_model->insert($data);
             $this->session->set_flashdata('message', 'Create Record Success 2');
-            redirect(site_url('hse_sasaran_mutu_detail'));
+            redirect(site_url('sasaran_mutu/detail/'.$this->input->post('id_samut',TRUE)));
         }
     }
     
@@ -144,7 +150,7 @@ class Hse_sasaran_mutu_detail extends CI_Controller
 
             $this->Hse_sasaran_mutu_detail_model->update($this->input->post('id', TRUE), $data);
             $this->session->set_flashdata('message', 'Update Record Success');
-            redirect(site_url('hse_sasaran_mutu_detail'));
+            redirect(site_url('sasaran_mutu/detail/'.$this->input->post('id_samut',TRUE)));
         }
     }
     
@@ -161,6 +167,24 @@ class Hse_sasaran_mutu_detail extends CI_Controller
             redirect(site_url('hse_sasaran_mutu_detail'));
         }
     }
+
+        function get_autocomplete(){
+        if (isset($_GET['term'])) {
+            $result = $this->Hse_sasaran_mutu_detail_model->search_divisi($_GET['term']);
+            if (count($result) > 0) {
+            foreach ($result as $row)
+            $arr_result[] = array(
+                'label'   => $row->nm_divisi,
+                'pic'   => $row->pic,
+                // 'id_client' => $row->id_client,
+                // 'bank_name' => $row->bank_name,
+         );
+                echo json_encode($arr_result);
+        
+            }
+        }
+    }
+
 
     public function _rules() 
     {
