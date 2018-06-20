@@ -10,7 +10,7 @@
         
         <div class="box-body">
         <div style="padding-bottom: 10px;"'>
-        <?php echo anchor(site_url('sasaran_mutu/create'), '<i class="fa fa-wpforms" aria-hidden="true"></i> Tambah Data', 'class="btn btn-danger btn-sm"'); ?>
+        <?php echo anchor(site_url('sasaran_mutu/create/'), '<i class="fa fa-wpforms" aria-hidden="true"></i> Tambah Data', 'class="btn btn-danger btn-sm"'); ?>
 		<?php echo anchor(site_url('sasaran_mutu/excel'), '<i class="fa fa-file-excel-o" aria-hidden="true"></i> Export Ms Excel', 'class="btn btn-success btn-sm"'); ?></div>
         <table class="table table-bordered table-striped" id="mytable">
             <thead>
@@ -74,7 +74,7 @@
 
                         "render": function(data, type, row, meta){
                         if(type === 'display'){
-                        data = '<a href="<?php echo site_url('Hse_sasaran_mutu_detail/') ?>' + row.id + '">' + data + '</a>';
+                        data = '<a href="<?php echo site_url('sasaran_mutu/detail/') ?>' + row.id + '">' + data + '</a>';
                         }
 
                         return data;

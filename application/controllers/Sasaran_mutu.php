@@ -135,14 +135,15 @@ class Sasaran_mutu extends CI_Controller
 
     public function detail($id){
 
-        $data = array('all' =>$this->db->where('id_samut',$id)->get('hse_sasaran_mutu_detail')->result(), );
+        $data = array('all' =>$this->db->where('id_samut',$id)->get('hse_sasaran_mutu_detail')->result(), 
+                    "id"=>$id,);
 
-        $this->template->load('template','hse_sasaran_mutu_detail/hse_sasaran_mutu_detail_list');
+        $this->template->load('template','sasaran_mutu/sasaran_mutu_detail',$data);
     }
 
-public function json_2($id) {
+public function json_2() {
         header('Content-Type: application/json');
-        echo $this->Sasaran_mutu_model->json_2($id);
+        echo $this->Sasaran_mutu_model->json_2();
     }
 
 

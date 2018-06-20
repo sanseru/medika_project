@@ -46,13 +46,13 @@ class Hse_sasaran_mutu_detail extends CI_Controller
         }
     }
 
-    public function create() 
+    public function create($id) 
     {
         $data = array(
             'button' => 'Create',
             'action' => site_url('hse_sasaran_mutu_detail/create_action'),
 	    'id' => set_value('id'),
-	    'id_samut' => set_value('id_samut'),
+	    'id_samut' => $id,
 	    'departmen' => set_value('departmen'),
 	    'pic' => set_value('pic'),
 	    'due_date' => set_value('due_date'),
@@ -60,12 +60,16 @@ class Hse_sasaran_mutu_detail extends CI_Controller
 	    'goals' => set_value('goals'),
 	    'audit' => set_value('audit'),
 	    'keterangan' => set_value('keterangan'),
+        'created_date' => set_value('created_date'),
+        'created_by' => set_value('created_by'),
 	);
         $this->template->load('template','hse_sasaran_mutu_detail/hse_sasaran_mutu_detail_form', $data);
     }
     
     public function create_action() 
     {
+        date_default_timezone_set('Asia/Jakarta');
+        $now = date('y-m-d H:i:s');
         $this->_rules();
 
         if ($this->form_validation->run() == FALSE) {
@@ -80,7 +84,10 @@ class Hse_sasaran_mutu_detail extends CI_Controller
 		'goals' => $this->input->post('goals',TRUE),
 		'audit' => $this->input->post('audit',TRUE),
 		'keterangan' => $this->input->post('keterangan',TRUE),
-	    );
+        'created_date' => $now,
+        'created_by' => $this->session->userdata('full_name',TRUE),
+    );
+	
 
             $this->Hse_sasaran_mutu_detail_model->insert($data);
             $this->session->set_flashdata('message', 'Create Record Success 2');
@@ -115,6 +122,8 @@ class Hse_sasaran_mutu_detail extends CI_Controller
     
     public function update_action() 
     {
+        date_default_timezone_set('Asia/Jakarta');
+        $now = date('y-m-d H:i:s');
         $this->_rules();
 
         if ($this->form_validation->run() == FALSE) {
@@ -129,6 +138,8 @@ class Hse_sasaran_mutu_detail extends CI_Controller
 		'goals' => $this->input->post('goals',TRUE),
 		'audit' => $this->input->post('audit',TRUE),
 		'keterangan' => $this->input->post('keterangan',TRUE),
+        'modify_date' => $now,
+        'modify_by' => $this->session->userdata('full_name',TRUE),
 	    );
 
             $this->Hse_sasaran_mutu_detail_model->update($this->input->post('id', TRUE), $data);
@@ -153,7 +164,6 @@ class Hse_sasaran_mutu_detail extends CI_Controller
 
     public function _rules() 
     {
-	$this->form_validation->set_rules('id_samut', 'id samut', 'trim|required');
 	$this->form_validation->set_rules('departmen', 'departmen', 'trim|required');
 	$this->form_validation->set_rules('pic', 'pic', 'trim|required');
 	$this->form_validation->set_rules('due_date', 'due date', 'trim|required');

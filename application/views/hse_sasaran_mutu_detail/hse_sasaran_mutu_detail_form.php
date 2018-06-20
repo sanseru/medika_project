@@ -20,7 +20,7 @@
         <tr><td width='200'>Keterangan <?php echo form_error('keterangan') ?></td><td> <textarea class="form-control" rows="3" name="keterangan" id="keterangan" placeholder="Keterangan"><?php echo $keterangan; ?></textarea></td></tr>
 	    <tr><td></td><td><input type="hidden" name="id" value="<?php echo $id; ?>" /> 
 	    <button type="submit" class="btn btn-danger"><i class="fa fa-floppy-o"></i> <?php echo $button ?></button> 
-	    <a href="<?php echo site_url('hse_sasaran_mutu_detail') ?>" class="btn btn-info"><i class="fa fa-sign-out"></i> Kembali</a></td></tr>
+	    <a href="<?php echo site_url('sasaran_mutu/detail/'. $id_samut) ?>" class="btn btn-info"><i class="fa fa-sign-out"></i> Kembali</a></td></tr>
 	</table></form>        </div>
 </div>
 </div>

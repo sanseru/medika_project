@@ -21,17 +21,17 @@ class Sasaran_mutu_model extends CI_Model
         $this->datatables->from('hse_sasaran_mutu');
         //add this line for join
         //$this->datatables->join('table2', 'hse_sasaran_mutu.field = table2.field');
-        $this->datatables->add_column('action', anchor(site_url('sasaran_mutu/detail/$1'),'<i class="fa fa-eye" aria-hidden="true"></i>', array('class' => 'btn btn-danger btn-sm'))." 
+        $this->datatables->add_column('action', anchor(site_url('sasaran_mutu/detail/$1'),'<i class="fa fa-search-plus" aria-hidden="true"></i>', array('class' => 'btn btn-danger btn-sm'))." 
             ".anchor(site_url('sasaran_mutu/read/$1'),'<i class="fa fa-eye" aria-hidden="true"></i>', array('class' => 'btn btn-danger btn-sm'))." 
             ".anchor(site_url('sasaran_mutu/update/$1'),'<i class="fa fa-pencil-square-o" aria-hidden="true"></i>', array('class' => 'btn btn-danger btn-sm'))." 
                 ".anchor(site_url('sasaran_mutu/delete/$1'),'<i class="fa fa-trash-o" aria-hidden="true"></i>','class="btn btn-danger btn-sm" onclick="javasciprt: return confirm(\'Are You Sure ?\')"'), 'id');
         return $this->datatables->generate();
     }
 
-        function json_2() {
+        function json_2($id) {
         $this->datatables->select('id,departmen,pic,due_date,status,goals,audit,keterangan');
         $this->datatables->from('hse_sasaran_mutu_detail');
-        $this->datatables->where('id_samut', '$id');
+        $this->datatables->where('id_samut', $id);
         //add this line for join
         //$this->datatables->join('table2', 'hse_sasaran_mutu_detail.field = table2.field');
         $this->datatables->add_column('action', anchor(site_url('hse_sasaran_mutu_detail/read/$1'),'<i class="fa fa-eye" aria-hidden="true"></i>', array('class' => 'btn btn-danger btn-sm'))." 
