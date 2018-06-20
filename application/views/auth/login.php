@@ -35,7 +35,7 @@
             <td align="right"><img src="<?php echo base_url('image/MP.png'); ?>" height="140" width="250" /></td>
         </tr>                
     </table>
-    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br>
     <div class="login-box">
         <div class="login-logo">
             <!-- <a href="<?php echo base_url(); ?>/adminlte/index2.html"><b>MEDIKA</b>PLAZA</a></br> -->
