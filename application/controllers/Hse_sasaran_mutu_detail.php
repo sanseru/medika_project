@@ -156,15 +156,16 @@ class Hse_sasaran_mutu_detail extends CI_Controller
     
     public function delete($id) 
     {
+        $sm=getsm($id);
         $row = $this->Hse_sasaran_mutu_detail_model->get_by_id($id);
 
         if ($row) {
             $this->Hse_sasaran_mutu_detail_model->delete($id);
             $this->session->set_flashdata('message', 'Delete Record Success');
-            redirect(site_url('hse_sasaran_mutu_detail'));
+            redirect(site_url('sasaran_mutu/detail/'.$sm));
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
-            redirect(site_url('hse_sasaran_mutu_detail'));
+            redirect(site_url('sasaran_mutu/detail/'.$sm));
         }
     }
 

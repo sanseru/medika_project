@@ -97,3 +97,10 @@ function autocomplate_json($table,$field){
     }
     echo json_encode($return_arr);
 }
+
+function getsm($id)
+{
+    $ci=& get_instance();
+    $q = $ci->db->query("select * from hse_sasaran_mutu_detail where id='$id'")->row_array();
+    return $q['id_samut'];
+}
