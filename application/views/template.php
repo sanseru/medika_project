@@ -15,9 +15,9 @@
         <link rel="stylesheet" href="<?php echo base_url() ?>assets/adminlte/bower_components/select2/dist/css/select2.min.css">
         <link rel="stylesheet" href="<?php echo base_url() ?>assets/adminlte/bower_components/Ionicons/css/ionicons.min.css">
           <!-- daterange picker -->
-        <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/adminltebootstrap-daterangepicker/daterangepicker.css">
+        <!-- <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/adminltebootstrap-daterangepicker/daterangepicker.css"> -->
         <!-- bootstrap datepicker -->
-        <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/adminltebootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+        <!-- <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/adminltebootstrap-datepicker/dist/css/bootstrap-datepicker.min.css"> -->
         <!-- DataTables -->
         <link rel="stylesheet" href="<?php echo base_url() ?>assets/adminlte/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
         <!-- Theme style -->
@@ -26,7 +26,8 @@
              folder instead of downloading all of them to reduce the load. -->
         <link rel="stylesheet" href="<?php echo base_url() ?>assets/adminlte/dist/css/skins/_all-skins.min.css">
         <link rel="stylesheet" href="<?php echo base_url() ?>assets/adminlte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-
+        <!-- Morris charts -->
+        <link rel="stylesheet" href="<?php echo base_url() ?>assets/adminlte/bower_components/morris.js/morris.css">
         
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -319,9 +320,9 @@
         <!-- ./wrapper -->
         <script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery-1.9.1.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url() ?>assets/jquery-ui/ui/minified/jquery-ui.min.js"></script>
-        <!-- jQuery 3
-        <script src="<?php echo base_url() ?>assets/adminlte/bower_components/jquery/dist/jquery.min.js"></script>
-         -->
+        <!-- jQuery 3 -->
+        <!-- <script src="<?php echo base_url() ?>assets/adminlte/bower_components/jquery/dist/jquery.min.js"></script> -->
+        
         <!-- Bootstrap 3.3.7 -->
         <script src="<?php echo base_url() ?>assets/adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
         <!-- DataTables -->
@@ -345,6 +346,12 @@
         <!-- bootstrap datepicker -->
         <script src="<?php echo base_url() ?>assets/adminlte/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
         <!-- page script -->
+        <!-- <script src="<?php echo base_url()?>assets/adminlte/bower_components/chart/Chart.js"></script>-->        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
+
+        <!-- Morris.js charts -->
+        <!--   <script src="<?php echo base_url()?>assets/adminlte/bower_components/raphael/raphael.min.js"></script>
+        <script src="<?php echo base_url()?>assets/adminlte/bower_components/morris.js/morris.min.js"></script> -->
         <script>
             $(function () {
                 $('.select2').select2()
@@ -354,7 +361,7 @@
 
     //Date picker
     $('#due_date').datepicker({
-    format: 'dd-MM-yyyy',
+    format: 'dd-mm-yyyy',
     locale:'id',
       autoclose: true
       
@@ -380,5 +387,8 @@
                 })
             })
         </script>
+
+       
+       
     </body>
 </html>

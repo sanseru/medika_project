@@ -39,6 +39,22 @@ class Sasaran_mutu_model extends CI_Model
                 ".anchor(site_url('hse_sasaran_mutu_detail/delete/$1'),'<i class="fa fa-trash-o" aria-hidden="true"></i>','class="btn btn-danger btn-sm" onclick="javasciprt: return confirm(\'Are You Sure ?\')"'), 'id');
         return $this->datatables->generate();
     }
+        function get_data_stok($id){
+        $query = $this->db->query("
+SELECT a.departmen, a.audit AS stok, b.periode 
+FROM hse_sasaran_mutu_detail a
+LEFT JOIN hse_sasaran_mutu b ON b.id = a.id_samut
+where id_samut = $id
+ 
+");
+         
+        if($query->num_rows() > 0){
+            foreach($query->result() as $data){
+                $hasil[] = $data;
+            }
+            return $hasil;
+        }
+    }
 
     // get all
     function get_all()

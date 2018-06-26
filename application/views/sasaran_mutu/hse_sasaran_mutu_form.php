@@ -1,6 +1,7 @@
 
 <div class="content-wrapper">
-    
+    <br>
+<br>
     <section class="content">
         <div class="box box-warning box-solid">
             <div class="box-header with-border">
