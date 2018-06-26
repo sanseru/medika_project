@@ -123,7 +123,12 @@ var myChart = new Chart(ctx, {
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero:true
+                    beginAtZero:true,
+                     min: 0,
+           max: 100,
+           callback: function(value) {
+               return value + "%"
+           }
                 }
             }]
         }
