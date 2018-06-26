@@ -71,6 +71,7 @@
             $merk[] = $data->departmen;
             $stok[] = (float) $data->stok;
             $periode[] = (float)  $data->periode;
+            $target[] = $data->target;
         }
     ?>
   <canvas id="myChart" name ="myChart" width="800" height="280"></canvas>
@@ -105,7 +106,18 @@ var myChart = new Chart(ctx, {
                 'rgba(255, 159, 64, 1)'
             ],
             borderWidth: 1
-    }]
+    },
+    {
+   label: 'TARGET',
+      data: <?php echo json_encode($target);?>,
+      backgroundColor: 
+                'rgba(153, 102, 255, 0.2)',
+            borderColor: 
+                'rgba(153, 102, 255, 0.2)',
+            borderWidth: 1
+    } 
+
+    ]
   },
    options: {
         scales: {

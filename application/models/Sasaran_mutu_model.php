@@ -41,7 +41,7 @@ class Sasaran_mutu_model extends CI_Model
     }
         function get_data_stok($id){
         $query = $this->db->query("
-SELECT a.departmen, a.audit AS stok, b.periode 
+SELECT a.departmen, a.audit AS stok, a.goals AS target, b.periode 
 FROM hse_sasaran_mutu_detail a
 LEFT JOIN hse_sasaran_mutu b ON b.id = a.id_samut
 where id_samut = $id
