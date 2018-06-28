@@ -42,8 +42,8 @@
             <td><?php echo $row->due_date; ?></td>
             <td><?php echo $row->status; ?></td>
             <td><?php echo $row->modify_date; ?></td>
-            <td><?php echo $row->goals; ?></td>
-            <td><?php echo $row->audit; ?></td>
+            <td><?php echo $row->goals; ?> %</td>
+            <td><?php echo $row->audit; ?> %</td>
             <td><?php echo $row->keterangan;?></td>
             
             <td style="width:100px">
@@ -64,7 +64,9 @@
 
             </div>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script> -->
+        <script src="<?php echo base_url() ?>assets/adminlte/chartjs.js"></script>
+
 
   <?php
         foreach($graf as $data){
@@ -131,6 +133,12 @@ var myChart = new Chart(ctx, {
            }
                 }
             }]
+        },
+
+         title: {
+            display: true,
+            text: 'CAPAIAN SASARAN MUTU DEPARTMEN',
+            fontSize  : 25
         }
     }
 });
