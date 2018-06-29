@@ -361,7 +361,7 @@
 
     //Date picker
     $('#due_date').datepicker({
-    format: 'dd-mm-yyyy',
+    format: 'yyyy-mm-dd',
     locale:'id',
       autoclose: true
       

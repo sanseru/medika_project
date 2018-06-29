@@ -144,6 +144,8 @@ class Sasaran_mutu extends CI_Controller
         $this->template->load('template','sasaran_mutu/sasaran_mutu_detail',$data);
     }
 
+    
+
 public function json_2() {
         header('Content-Type: application/json');
         echo $this->Sasaran_mutu_model->json_2();

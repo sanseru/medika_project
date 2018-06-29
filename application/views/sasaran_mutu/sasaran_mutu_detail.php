@@ -5,7 +5,7 @@
                 <div class="box box-warning box-solid">
     
                     <div class="box-header">
-                        <h3 class="box-title">KELOLA DATA HSE_SASARAN_MUTU_DETAIL</h3>
+                        <h3 class="box-title">SASARAN MUTU DETAIL</h3>
                     </div>
         
         <div class="box-body">

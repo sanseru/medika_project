@@ -6,7 +6,7 @@
             <div class='col-xs-12'>
               <div class='box'>
                 <div class='box-header'>
-                <h3 class='box-title'>Hse_sasaran_mutu Read</h3>
+                <h3 class='box-title'>Detail SASARAN MUTU</h3>
         <table class="table table-bordered">
 	    <tr><td>Periode</td><td><?php echo $periode; ?></td></tr>
 	    <tr><td>Created Date</td><td><?php echo $created_date; ?></td></tr>
