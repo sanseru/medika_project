@@ -16,7 +16,8 @@ class Hse_dashboard extends CI_Controller
 
     public function index()
     {
-                $cek=$this->db->query("select due_date from hse_sasaran_mutu where id='$id'");
+                $cek=$this->db->query("select due_date from hse_sasaran_mutu ");
+                // --where id='$id'
          foreach ($cek->result() as $row)
     {
         $due_date =  $row->due_date;
@@ -30,6 +31,7 @@ class Hse_dashboard extends CI_Controller
     
    
 
+}
 }
 
 /* End of file Sasaran_mutu.php */

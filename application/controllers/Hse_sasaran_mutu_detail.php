@@ -195,7 +195,7 @@ class Hse_sasaran_mutu_detail extends CI_Controller
 	$this->form_validation->set_rules('status', 'status', 'trim|required');
 	$this->form_validation->set_rules('goals', 'goals', 'trim|required');
 	$this->form_validation->set_rules('audit', 'audit', 'trim|required');
-	$this->form_validation->set_rules('keterangan', 'keterangan', 'trim|required');
+	// $this->form_validation->set_rules('keterangan', 'keterangan', 'trim|required');
 
 	$this->form_validation->set_rules('id', 'id', 'trim');
 	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
