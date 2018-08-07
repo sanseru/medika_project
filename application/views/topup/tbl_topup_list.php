@@ -69,7 +69,7 @@
 			<td><?php echo $topup->rekening ?></td>
 			<td><?php echo $topup->id_client ?></td>
 			<td><?php echo $topup->client ?></td>
-			<td><?php echo number_format ($topup->jml_topup) ?></td>
+			<td><?php echo number_format ((float)$topup->jml_topup,2,',','.') ?></td>
 			<td style="text-align:center" width="200px">
 				<?php 
                 echo anchor(site_url('topup/read/'.$topup->id),'<i class="fa fa-eye" aria-hidden="true"></i>','class="btn btn-danger btn-sm"'); 

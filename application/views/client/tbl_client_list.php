@@ -72,7 +72,7 @@
 			<td><?php echo $client->client_bank_account ?></td>
 			<td><?php echo $client->telephone ?></td>
 			<td><?php echo $client->email ?></td>
-			<td>Rp. <?php echo number_format ($client->saldo);?></td>
+			<td>Rp. <?php echo number_format ((float)$client->saldo,2,',','.');?></td>
 			<td style="text-align:center" width="150px">
 				<?php 
 				echo anchor(site_url('client/read/'.$client->id_client),'<i class="fa fa-eye" aria-hidden="true"></i>','class="btn btn-danger btn-sm"'); 
@@ -89,7 +89,7 @@
             ?>
             <tr>
             <td colspan="7" align="center"><b>Total</b></td>
-            <td colspan="2" align="left"><b>Rp. <?php echo number_format($total);?></b></td>
+            <td colspan="2" align="left"><b>Rp. <?php echo number_format((float)$total,2,',','.');?></b></td>
             </tr>
         </table>
         <div class="row">

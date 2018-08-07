@@ -115,7 +115,7 @@ class Topup extends CI_Controller
                     // var_dump($c_result);
                     // var_dump($c_result->saldo);
                     $c_data = array(
-                        'saldo' => intval($this->input->post('jml_topup',TRUE)) + intval($c_result->saldo)
+                        'saldo' => floatval($this->input->post('jml_topup',TRUE)) + floatval($c_result->saldo)
                     );
                     // var_dump($c_data);
                     $this->Client_model->update($this->input->post('id_client', TRUE), $c_data);

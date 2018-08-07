@@ -100,7 +100,7 @@ class Transaksi_finance extends CI_Controller
             $c_result = $this->Client_model->get_by_id($this->input->post('id_client', TRUE));
             if(isset($c_result)){
                 $c_data = array(
-                    'saldo' => intval($c_result->saldo) - intval($this->input->post('jumlah',TRUE)),
+                    'saldo' => floatval($c_result->saldo) - floatval($this->input->post('jumlah',TRUE)),
                 );
 
                 // var_dump($d_data);

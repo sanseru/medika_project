@@ -6,7 +6,7 @@
             <div class='col-xs-12'>
               <div class='box'>
                 <div class='box-header'>
-                <h3 class='box-title'>Tbl_log_it Read</h3>
+                <h3 class='box-title'>LOG READ</h3>
         <table class="table table-bordered">
 	    <tr><td>User</td><td><?php echo $user; ?></td></tr>
 	    <tr><td>Id User</td><td><?php echo $id_user; ?></td></tr>
