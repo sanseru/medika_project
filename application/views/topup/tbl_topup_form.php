@@ -5,7 +5,7 @@
             <div class="box-header with-border">
                 <h3 class="box-title">INPUT DATA TBL_TOPUP</h3>
             </div>
-            <form action="<?php echo $action; ?>" method="post">
+            <form action="<?php echo $action; ?>" method="post" onsubmit="return confirm('Are you sure you want to submit this form?');">
             
 <table class='table table-bordered>'        
         <tr><td width='200'>Client <?php echo form_error('client') ?></td><td><input type="text" class="form-control" name="client" id="client" placeholder="Client" value="<?php echo $client; ?>" /></td></br></tr>

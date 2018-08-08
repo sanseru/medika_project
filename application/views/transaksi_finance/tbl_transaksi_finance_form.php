@@ -5,7 +5,7 @@
             <div class="box-header with-border">
                 <h3 class="box-title">INPUT DATA TBL_TRANSAKSI_FINANCE</h3>
             </div>
-            <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
+            <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" onsubmit="return confirm('Are you sure you want to submit this form?');">
             
 <table class='table table-bordered>'        
 
